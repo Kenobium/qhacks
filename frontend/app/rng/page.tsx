@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { ResultTable } from "../components/table";
+import { MouseEventHandler } from "react";
 
 const QuantumStateSimulator: React.FC = () => {
     const [numStates, setNumStates] = useState(1);
@@ -60,8 +61,8 @@ const QuantumStateSimulator: React.FC = () => {
         setNames(updatedNames);
     };
 
-    const handleEqualProbability = (
-        event: React.MouseEventHandler<HTMLButtonElement>
+    const handleEqualProbability: MouseEventHandler<HTMLButtonElement> = (
+        event: React.MouseEvent<HTMLButtonElement>
     ) => {
         const equalProbability = 1 / numStates;
 
@@ -101,10 +102,13 @@ const QuantumStateSimulator: React.FC = () => {
         return padding + binaryStr;
     }
 
-    const handleSimulation = async (
-        event: React.MouseEventHandler<HTMLButtonElement>
+    const handleSimulation: MouseEventHandler<HTMLButtonElement> = async (
+        event: React.MouseEvent<HTMLButtonElement>
     ) => {
-        if (probabilities.reduce((sum, num) => sum + num, 0) !== 1) {
+        if (
+            Math.abs(probabilities.reduce((sum, num) => sum + num, 0) - 1) >
+            0.00001
+        ) {
             alert("Probabilities must equal 1");
             return;
         }

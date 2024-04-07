@@ -14,7 +14,7 @@ export default function Home() {
             ></Image>
             <header className="mb-8 text-center">
                 <h1 className="mb-8 text-6xl font-bold">
-                    Generate Randomness using Quantum Computing
+                    Quantum State Simulator
                 </h1>
                 <p className="text-xl text-gray-600">
                     Created By: Prajwal Moharana and Dhruv Ranganath
@@ -22,11 +22,6 @@ export default function Home() {
             </header>
 
             <main className="text-center">
-                <p className="mb-8 text-lg">
-                    Collaborate with your team, track progress, and showcase
-                    your projects with ease.
-                </p>
-
                 <div className="flex justify-center space-x-4">
                     <Link href="/rng">
                         <button className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-600">
