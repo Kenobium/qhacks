@@ -47,10 +47,17 @@ const QuantumStateSimulator: React.FC = () => {
         setNames(updatedNames);
     };
 
-    const totalProbability = probabilities.reduce(
-        (sum, probability) => sum + probability,
-        0
-    );
+    const handleEqualProbability = (
+        event: React.MouseEventHandler<HTMLButtonElement>
+    ) => {
+        const equalProbability = 1 / numStates;
+
+        setProbabilities(probabilities.map((x) => equalProbability));
+    };
+
+    const handleSimulation = (
+        event: React.MouseEventHandler<HTMLButtonElement>
+    ) => {};
 
     return (
         <div className="container mx-auto px-4 py-8">
@@ -118,10 +125,19 @@ const QuantumStateSimulator: React.FC = () => {
                 ))}
             </div>
 
-            <div className="mt-8">
-                <p className="text-lg">
-                    Total Probability: {totalProbability.toFixed(2)}
-                </p>
+            <div className="flex-row py-10 pl-1">
+                <button
+                    onClick={handleEqualProbability}
+                    className="mr-10 rounded-md bg-blue-500 px-6 py-3 text-lg font-bold text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                    Set Equal Probabilities
+                </button>
+                <button
+                    onClick={handleSimulation}
+                    className="rounded-md bg-blue-500 px-6 py-3 text-lg font-bold text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                    Simulate Quantum Sample
+                </button>
             </div>
         </div>
     );
