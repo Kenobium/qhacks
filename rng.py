@@ -38,7 +38,7 @@ def rng(vals, shots=1):
     qc.measure_all()
     aer = AerSimulator()
     counts = aer.run(qc, shots=shots).result().get_counts()
-    return {str(int(k, 2)): v/shots for k, v in counts.items()}
+    return {int(k, 2): v/shots for k, v in counts.items()}
 
 if __name__ == '__main__':
 
