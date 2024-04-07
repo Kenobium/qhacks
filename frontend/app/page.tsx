@@ -20,13 +20,8 @@ export default function Home() {
                 </p>
 
                 <div className="flex justify-center space-x-4">
-                    <Link href="/about">
-                        <button className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-600">
-                            What We Explored
-                        </button>
-                    </Link>
                     <Link href="/rng">
-                        <button className="rounded bg-gray-200 px-4 py-2 font-bold text-gray-800 hover:bg-gray-300">
+                        <button className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-600">
                             Learn About Quantum Computing
                         </button>
                     </Link>

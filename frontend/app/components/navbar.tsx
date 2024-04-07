@@ -17,9 +17,6 @@ export default function Navbar() {
             <Link href={"/"} className="btn btn-ghost text-xl">
                 Home
             </Link>
-            <Link href={"/about"} className="btn btn-ghost text-xl">
-                What We Tried
-            </Link>
             <Link href={"/rng"} className="btn btn-ghost text-xl">
                 Random Generator
             </Link>
