@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "python-shell": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/python-shell": "^1.0.3"
+  }
+}
