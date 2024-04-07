@@ -1,9 +1,17 @@
 // app/page.js
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
     return (
-        <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100">
+        <div className="flex min-h-screen flex-col items-center bg-gray-100">
+            <Image
+                src="/qibit-randomness.png"
+                alt="Picture depicting difference between bit and quibit"
+                width={600}
+                height={600}
+                className="mb-10 mt-20 rounded-[100px] border border-slate-300"
+            ></Image>
             <header className="mb-8 text-center">
                 <h1 className="mb-8 text-6xl font-bold">
                     Generate Randomness using Quantum Computing
