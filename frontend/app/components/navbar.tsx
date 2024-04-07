@@ -4,13 +4,16 @@ import Image from "next/image";
 export default function Navbar() {
     return (
         <div className="navbar bg-base-100">
-            <Image
-                alt="Tailwind CSS Navbar component"
-                src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                width={60}
-                height={60}
-                className="m-2 rounded-full"
-            />
+            <Link href={"/"}>
+                <Image
+                    alt="Tailwind CSS Navbar component"
+                    src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                    width={60}
+                    height={60}
+                    className="m-2 rounded-full"
+                />
+            </Link>
+
             <Link href={"/"} className="btn btn-ghost text-xl">
                 Home
             </Link>

@@ -1,7 +1,5 @@
 // app/page.js
 import Link from "next/link";
-import Image from "next/image";
-import Navbar from "./components/navbar";
 
 export default function Home() {
     return (
@@ -22,14 +20,14 @@ export default function Home() {
                 </p>
 
                 <div className="flex justify-center space-x-4">
-                    <Link href="/signup">
+                    <Link href="/about">
                         <button className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-600">
-                            Get Started
+                            What We Explored
                         </button>
                     </Link>
-                    <Link href="/explore">
+                    <Link href="/rng">
                         <button className="rounded bg-gray-200 px-4 py-2 font-bold text-gray-800 hover:bg-gray-300">
-                            Explore Projects
+                            Learn About Quantum Computing
                         </button>
                     </Link>
                 </div>
