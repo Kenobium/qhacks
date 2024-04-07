@@ -10,20 +10,24 @@ const QuantumStateSimulator: React.FC = () => {
     const handleNumStatesChange = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
-        const value = parseInt(event.target.value);
+        const value =
+            parseInt(event.target.value) <= 64
+                ? parseInt(event.target.value)
+                : 64;
         setNumStates(value);
 
         if (value <= names.length) {
             setNames(names.slice(0, value));
             setProbabilities(probabilities.slice(0, value));
         } else {
+            const newNames = [...names];
+            const newProbabilities = [...probabilities];
             for (let i = 0; i < value - names.length; i++) {
-                names.push(`State ${names.length + i}`);
-                probabilities.push(0);
+                newNames.push(`State ${names.length + i}`);
+                newProbabilities.push(0);
             }
-
-            setNames(names);
-            setProbabilities(probabilities);
+            setNames(newNames);
+            setProbabilities(newProbabilities);
         }
     };
 
@@ -71,7 +75,7 @@ const QuantumStateSimulator: React.FC = () => {
                     type="number"
                     id="numStates"
                     min="1"
-                    max="8"
+                    max="64"
                     value={numStates}
                     onChange={handleNumStatesChange}
                     className="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
